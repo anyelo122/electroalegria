@@ -7,11 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './core/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { IndexComponent } from './pages/index/index.component';
+import { OpenSidebarOnSwipeDirective } from './directive/open-sidebar-on-swipe.directive';
+import { SidebarSwipeService } from './services/sidebar-swipe.service';
+import { SetGetWidthSidebarPipe } from './pipes/set-get-width-sidebar.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    OpenSidebarOnSwipeDirective, 
+    SetGetWidthSidebarPipe
   ],
   imports: [
     BrowserModule,
@@ -20,7 +25,7 @@ import { IndexComponent } from './pages/index/index.component';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [SidebarSwipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
