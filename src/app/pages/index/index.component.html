@@ -1,41 +1,31 @@
-<mat-sidenav-container class="example-container">
-
-   <mat-sidenav [ngStyle]="{'width': width  +'%' }"
-    (setWidth) = "setWidth ($event) "
-    appOpenSidebarOnSwipe #sidenav mode = "over" >            
-      <mat-toolbar color="accent">
-          <span> Hola que hace </span>
-      </mat-toolbar>
-   </mat-sidenav>
-   <mat-sidenav-content>
-<nav >
-      <ul fxFlex="80%"  fxLayout="row"   fxLayoutAlign="space-around"  class="nav-links" >
-            <li class="uno">
-                <a href="#">Inicio</a>
-            </li>
-            <li class="dos">
-                <a  href="#">Servicios</a>
-            </li>
-            <li class="tres">
-                <a href="#">Agendar Cita</a>
-            </li>
-            <li class="cuatro">
-                <a href="#">Sobre Nosotros</a>
-            </li>
-            <li class="cinco">
-                <a href="#">Contáctanos</a>
-            </li>
-            <li class="seis">
-                <a class="sign-in" href="#">Iniciar Sesión</a>
-            </li>
-        </ul>
-      <div class="hamburger" fxShow.lt-md="true" (click)="sidenav.open()">
+      <nav>
+      <div class="hamburger" (click)="sidenav.open()">
         <div class="line" id="primero"></div>
         <div class="line" id="segundo"></div>
         <div class="line" id="tercero"></div>
     </div>
     </nav>
-  	<section fxFlex fxLayout="column" fxLayoutAlign="center center" class="landing">
-        <h1>ElectroAlegría</h1>
-        <h2>Tu seguridad es nuestra tranquilidad</h2>
-    </section>
+  <mat-sidenav-container class="example-container">
+
+   <mat-sidenav [ngStyle]="{'width': width  +'%' }"
+    (setWidth) = "setWidth ($event) "
+    appOpenSidebarOnSwipe #sidenav mode = "over" >            
+      <mat-toolbar color="accent">
+          <span> Menú </span>
+      </mat-toolbar>
+      <mat-nav-list>
+          <a mat-list-item href="#">Inicio</a>
+          <a mat-list-item href="#">Servicios</a>
+          <a mat-list-item href="#">Agendar Cita</a>
+          <a mat-list-item href="#">Sobre Nosotros</a>
+          <a mat-list-item href="#">Contáctanos</a>
+          <a mat-list-item class="sign-in" routerLink="/login">Iniciar Sesión</a>
+      </mat-nav-list>
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <app-inicio></app-inicio>
+      <app-services></app-services>
+   </mat-sidenav-content>
+
+</mat-sidenav-container>
+  	

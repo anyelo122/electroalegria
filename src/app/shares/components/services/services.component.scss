@@ -1,0 +1,12 @@
+:host {
+	display: flex;
+	flex-direction:column;
+	height: 100%;
+}
+.services-title {
+	max-width: 100%;
+	margin-top: 10px;
+}
+.services-title h2 {
+	text-align: center;
+}

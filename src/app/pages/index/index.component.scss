@@ -6,48 +6,18 @@
 
 nav {
     height: 12vh;
-   /* background-color: #5b78c7;*/
-   margin-top: 15px;
-}
-.nav-links {
-    list-style: none;
-    width: 80%;
-   /* background-color: lightcoral;*/
-    height: 100%;
-    margin: auto;
+    margin-top: 10px;
+    position: relative;
 }
 
-.nav-links li a {
-    margin: 15px;
-    color: black; 
-    text-decoration: none;
-    font-size: calc(100vw / 60);
-}
-
-.landing  h1 {
-    margin-left: 100px;
-    font-size: 50px;
-    color: #ae5fce;
-}
-.landing h2 {
-    margin-right: 300px;
-    font-size: 40px;
-    color: yellowgreen; 
-}
-
-@media screen and (max-width: 959px){
-    .line {
+.line {
         width: 30px;
         height: 3px;
         background-color: black;
         margin: 5px;
         border-radius: 3px;
     }
-    nav{
-        position: relative; 
-
-       }
-    .hamburger{
+.hamburger{
         position: absolute;
         cursor: pointer;
         right: 5%;
@@ -55,23 +25,14 @@ nav {
         transform: translateY(-5%, -50%);
         z-index: 2;
         transition: all 0.5 ease 0.1s;
+        background-color: #ffffff;
+        border-radius: 5px;
     }
-    .nav-links li { 
-        z-index: -1;
-    }
-  /*      
-    .nav-links {
-    position: fixed;
-    background-color: #5b78c7;
-    height: 100vh;
-    width: 100%;
-    clip-path: circle(50px at 90% -10%);
-    -webkit-clip-path:circle(50px at 90% -10%);
-    transition: all .8s ease-in 0.2s;     
-    pointer-events: none;
+
+@media screen and (max-width: 959px){
     
-}
-    .nav-links li a {
+
+   /* .nav-links li a {
         color: white;
         font-size: calc(100vw / 20);
         margin-left: 15%;
@@ -79,11 +40,7 @@ nav {
         transform: translate(100px);
         transition: all 0.8s ease 0.5s;  
     }
-    .nav-links.open{
-        clip-path: circle(1500px at 90% -10%);
-        -webkit-clip-path: circle(1500px at 90% -10%);
-        pointer-events: all;
-    }
+    */
     .nav-links.open ~ .hamburger:nth-child(1){
     transform: translateY(10%, 50%); 
     background-color: #ae5fce;
@@ -111,29 +68,6 @@ nav {
         width: 35px;
         transition: all 0.5s ease 0.2s;
     }
-    
-    .nav-links li:nth-child(1){
-        transition: all 0.5s ease 0.1s;
-    }
-    .nav-links li:nth-child(2){
-        transition: all 0.5s ease 0.3s;
-    }
-    .nav-links li:nth-child(3){
-        transition: all 0.5s ease 0.5s;
-    }
-    .nav-links li:nth-child(4){
-        transition: all 0.5s ease 0.5s;
-    }
-    .nav-links li:nth-child(5){
-        transition: all 0.5s ease 0.5s;
-    }
-    .nav-links li:nth-child(6){
-        transition: all 0.5s ease 0.5s;
-    }
-    
-    li.fade{
-        z-index: 3;
-    } */
 }
 .example-container {
   position: absolute;

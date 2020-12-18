@@ -10,13 +10,15 @@ import { IndexComponent } from './pages/index/index.component';
 import { OpenSidebarOnSwipeDirective } from './directive/open-sidebar-on-swipe.directive';
 import { SidebarSwipeService } from './services/sidebar-swipe.service';
 import { SetGetWidthSidebarPipe } from './pipes/set-get-width-sidebar.pipe';
+import { InicioComponent } from './shares/components/inicio/inicio.component';
+import { ServicesComponent } from './shares/components/services/services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     OpenSidebarOnSwipeDirective, 
-    SetGetWidthSidebarPipe
+    SetGetWidthSidebarPipe, InicioComponent, ServicesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+:host {
+	display: flex;
+	flex-direction:column;
+	height: 100%;
+}
+
+.landing { 
+	background-image: url('/assets/camera.jpg');
+	background-repeat: no-repeat; 
+	background-color: green;
+}
+
+.landing  h1 {
+    margin-left: 100px;
+    font-size: 45px;
+    color: black;
+}
+
+.landing h2 {
+    margin-right: 300px;
+    font-size: 30px;
+    color: gray; 
+}
