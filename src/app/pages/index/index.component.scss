@@ -25,25 +25,12 @@ nav {
         transform: translateY(-5%, -50%);
         z-index: 2;
         transition: all 0.5 ease 0.1s;
-        background-color: #ffffff;
-        border-radius: 5px;
     }
 
 @media screen and (max-width: 959px){
     
-
-   /* .nav-links li a {
-        color: white;
-        font-size: calc(100vw / 20);
-        margin-left: 15%;
-        position: absolute;
-        transform: translate(100px);
-        transition: all 0.8s ease 0.5s;  
-    }
-    */
     .nav-links.open ~ .hamburger:nth-child(1){
     transform: translateY(10%, 50%); 
-    background-color: #ae5fce;
     }
     .primero {
     position: absolute;

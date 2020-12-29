@@ -12,13 +12,17 @@ import { SidebarSwipeService } from './services/sidebar-swipe.service';
 import { SetGetWidthSidebarPipe } from './pipes/set-get-width-sidebar.pipe';
 import { InicioComponent } from './shares/components/inicio/inicio.component';
 import { ServicesComponent } from './shares/components/services/services.component';
+import { FooterComponent } from './shares/footer/footer.component';
+import { QuienesSomosComponent } from './shares/components/quienes-somos/quienes-somos.component';
+import { ContactanosComponent } from './shares/components/contactanos/contactanos.component';
+import { InformacionComponent } from './shares/components/informacion/informacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     OpenSidebarOnSwipeDirective, 
-    SetGetWidthSidebarPipe, InicioComponent, ServicesComponent
+    SetGetWidthSidebarPipe, InicioComponent, ServicesComponent, FooterComponent, QuienesSomosComponent, ContactanosComponent, InformacionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,19 @@
-<div fxFlex="100vh" fxLayout="row" style="background-color: #ffffff; margin-top: -5px;">
-	<div fxFlex="10vh" fxLayout="row" fxLayoutAlign="center center" class="services-title">
+<div fxFlex="100vh" fxLayout="column" class="services-content" style="background-color: white;">
+	<div fxFlex="10" fxLayout="row" fxLayoutAlign="center center" class="services-title">
 		<h2>Servicios</h2>
 	</div>
-	<div fxFlex>
-		
+	<div fxFlex fxLayoutAlign="space-around start"  fxLayout="row wrap" fxLayoutGap="2px" class="services-card">
+			<mat-card fxFlex="1 1 12em" fxFlex.sm="1 1 10em"  *ngFor="let ser of servicios"  class="card-services">
+			<mat-card-content >
+ 			<img src="{{ser.image}}" alt="{{ser.alt}}" class="img-service" />
+        	<h2 mat-card-title>{{ser.name}}</h2>
+ 				<p>
+ 				{{	ser.parrafo }}
+ 				</p>
+ 			</mat-card-content>
+			</mat-card>
 	</div>
 </div>
+<!-- 
+style="width:303px; height: 235;"
+-->

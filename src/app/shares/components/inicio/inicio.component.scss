@@ -7,17 +7,70 @@
 .landing { 
 	background-image: url('/assets/camera.jpg');
 	background-repeat: no-repeat; 
-	background-color: green;
+	background-color: rgba(255,255,255, 0.9);
+	width: 100%;
+	height: auto;
 }
 
-.landing  h1 {
-    margin-left: 100px;
-    font-size: 45px;
+.titles-content {
+	margin-top: 50%;
+	margin-left: 10%;	
+}
+
+.title-elec {
+    font-size: 6vw;
+    font-weight: bold;
+    color: white;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.subtitle-elec {
+    font-size: 3vw;
     color: black;
+	font-family: Roboto, "Helvetica Neue", sans-serif; 
+	padding-top: 5px;
+}
+.shap {
+	width: 100%;
+	max-width: 100%;
 }
 
-.landing h2 {
-    margin-right: 300px;
-    font-size: 30px;
-    color: gray; 
+@media screen and (max-width: 375px){
+	.titles-content {
+	margin-top: 70%;
+	}
+
+	.title-elec {
+    font-size: 12vw;
+	}
+	.subtitle-elec {
+    font-size: 8vw;
+    padding-top: -5px;
+	}
+}
+
+@media screen and (max-width: 599px){
+	
+	.title-elec {
+    font-size: 8vw;
+}
+
+.subtitle-elec {
+    font-size: 4vw; 
+    padding-top: -5px;
+}
+}
+@media screen and (max-width: 768px){
+	
+	.titles-content {
+	margin-top: 50%;
+}
+	.title-elec {
+    font-size: 8vw;
+}
+
+.subtitle-elec {
+    font-size: 4vw; 
+    padding-top: -5px;
+}
 }
