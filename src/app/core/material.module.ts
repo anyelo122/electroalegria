@@ -9,11 +9,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCardModule} from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
     exports: [
       MatFormFieldModule,
@@ -26,12 +26,12 @@ import {MatCardModule} from '@angular/material/card';
       MatMenuModule,
       MatListModule,
       MatDialogModule,
-      MatProgressSpinnerModule,
       MatFormFieldModule,
       MatSelectModule,
       MatTableModule,
       MatPaginatorModule,
-      MatCardModule
+      MatCardModule, 
+      MatProgressBarModule
     ]
 })
   export class MaterialModule { }

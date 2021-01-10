@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,24 +13,27 @@ import { SidebarSwipeService } from './services/sidebar-swipe.service';
 import { SetGetWidthSidebarPipe } from './pipes/set-get-width-sidebar.pipe';
 import { InicioComponent } from './shares/components/inicio/inicio.component';
 import { ServicesComponent } from './shares/components/services/services.component';
-import { FooterComponent } from './shares/footer/footer.component';
+import { FooterComponent } from './shares/components/footer/footer.component';
 import { QuienesSomosComponent } from './shares/components/quienes-somos/quienes-somos.component';
 import { ContactanosComponent } from './shares/components/contactanos/contactanos.component';
 import { InformacionComponent } from './shares/components/informacion/informacion.component';
+import { UbicacionComponent } from './shares/components/ubicacion/ubicacion.component';
+import { ModalContactComponent } from './shares/components/modal-contact/modal-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     OpenSidebarOnSwipeDirective, 
-    SetGetWidthSidebarPipe, InicioComponent, ServicesComponent, FooterComponent, QuienesSomosComponent, ContactanosComponent, InformacionComponent
+    SetGetWidthSidebarPipe, InicioComponent, ServicesComponent, FooterComponent, QuienesSomosComponent, ContactanosComponent, InformacionComponent, UbicacionComponent, ModalContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [SidebarSwipeService],
   bootstrap: [AppComponent]

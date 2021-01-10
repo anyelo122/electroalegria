@@ -1,1 +1,65 @@
-<p>contactanos works!</p>
+<div fxFlex="101vh" fxLayout="row" fxLayout.xs="column" class="contact-us">
+<div fxFlex="50.5" fxFlex.xs="80.5" fxLayout="column" class="contact-us-content">
+	<div fxFlex fxLayout="column" class="contact-us__item">
+ 			<h2 class="contact-us__title"><strong>C</strong>onéctate con nosotros</h2>
+ 			<h3 class="contact-us__subtitle">Estaremos muy contentos si nos contactas</h3>
+      <form [formGroup]="dataContact" (ngSubmit)="onSubmit(dataContact.value)">
+       <div fxFlex fxLayout="column" fxLayoutAlign="center">
+       	  <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutGap="5px"> 
+		        <mat-form-field  class="form-nombre-completo example-full-width">
+		            <mat-label>Tu nombre</mat-label>
+		            <input matInput placeholder="Nombre" formControlName="nombrecompleto"  required>
+            <mat-error *ngIf="!dataContact.controls['nombrecompleto'].valid">{{getErrorMessageNombre()}}</mat-error>
+		        </mat-form-field>
+		        <mat-form-field class="form-email example-full-width" >
+		            <mat-label>Tu correo electrónico</mat-label>
+		            <input matInput placeholder="cl@ejemplo.com" formControlName="correo" class="email-input" required>
+		        
+            <mat-error *ngIf="!dataContact.controls['correo'].valid">{{getErrorMessageCorreo()}}</mat-error>
+		        </mat-form-field>
+          </div>
+        <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutGap="5px">
+			<mat-form-field>
+			    <mat-label>Método de contacto</mat-label>
+			    <mat-select formControlName="metodo"  name="metodo">
+			      <mat-option *ngFor="let met of metodoc" [value]="met.id">
+			        {{met.name}} 
+			      </mat-option>
+			    </mat-select>
+            <mat-error *ngIf="!dataContact.controls['metodo'].valid">{{getErrorMessageMetodo()}}</mat-error>
+			  </mat-form-field>	
+		         <mat-form-field class="example-full-width">
+				    <mat-label>Tu número de Teléfono</mat-label>
+				    <span matPrefix>+56 &nbsp;</span>
+				    <input formControlName="telefono" type="tel" matInput placeholder="555-555-1234">
+				    <mat-icon matSuffix>mode_edit</mat-icon>
+            <mat-error *ngIf="!dataContact.controls['telefono'].valid">{{getErrorMessageTelefono()}}</mat-error>
+				  </mat-form-field>
+        </div> 
+ 		<mat-form-field>
+                    <mat-label> Acerca de tu mensaje</mat-label>
+                    <textarea matInput
+                              placeholder="Acerca de tu mensaje"
+                             formControlName="observaciones" required></textarea>
+
+            <mat-error *ngIf="!dataContact.controls['observaciones'].valid">{{getErrorMessageObservaciones()}}</mat-error>
+              </mat-form-field>
+              <div fxFlex fxLayout="row">
+		           	<mat-progress-bar mode="indeterminate" class="progress-indeterminate-contact"></mat-progress-bar>
+		           	<button mat-raised-button [disabled]="dataContact.invalid" color="primary" type="submit" class="button-contact">Contactar</button>
+      			</div>
+             </div>
+          </form>
+         </div>
+</div>
+<div fxFlex="50.5" fxFlex.xs="20.5" fxLayout="column" class="whatsapp-cont">
+	<div fxFlex fxLayout="column" class="whatsapp-cont__cont">
+	<div fxFlex fxLayout="column" class="whatsapp-cont__item">
+		<h2 class="whatsapp-cont__title">Conéctate con nosotros en WhatsApp</h2>
+		<h3 class="whatsapp-cont__subtitle">Para un contacto directo con nosotros</h3>
+		<a mat-raised-button href="https://web.whatsapp.com/api?oinadibqhneqwepominbim" target="_blank">
+		Ir a WhatsApp</a>
+	</div>
+	</div>
+</div>
+</div>

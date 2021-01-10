@@ -27,8 +27,8 @@
     font-weight: bold;
 }
 .services-card {
-	margin-left: 10%;
-	margin-right: 10%; 
+	margin-left: 5%;
+	margin-right: 5%; 
 	background-color: white; 
 
 }
@@ -38,30 +38,100 @@
 	width: 45%;	
 }
 
-
+/*
 .card-services {
 	max-width: 178px;
 	max-height: 212.47px;
 	margin-top: 2px;
 }
+*/
 
-
-@media screen and (max-width: 411px){
+@media screen and (max-width: 599px){
 .img-service {
-	max-width: 100%;
-	width: 25%;	
+	max-width: 50px;	
 }
 .card-services {
-	max-width: 165px;
-	max-height: 180.47px;
+	min-width: 140px;
+	max-width: 160px;
+	max-height: 120.47px;
 	margin-top: 2px;
 }
 
+.services-title h2 {
+	font-size: 4vw;	
+}
 }
 
-@media screen and (max-width: 768px){
+@media screen and (min-width: 600px) and (max-width: 909px){
 	
+.services-card {
+	margin-left: 20%;
+	margin-right: 20%; 
+	background-color: white; 
+
+}	
 		.services-title h2 {
 		    font-size: 4vw;	
 		}
+
+		.img-service {
+	max-width: 200px;
+}
+		.card-services {
+	min-width: 180px;
+	min-height: 170.47px;
+	max-width: 230px;
+	margin-top: 5px;
+
+}
+}
+
+@media screen and (min-width: 910px) and (max-width: 959px){
+	
+.services-card {
+	margin-left: 22%;
+	margin-right: 22%; 
+	background-color: white; 
+
+}	
+		.services-title h2 {
+		    font-size: 4vw;	
+		}
+
+		.img-service {
+	max-width: 250px;
+}
+		.card-services {
+	min-width: 180px;
+	min-height: 170.47px;
+	max-width: 240px;
+	margin-top: 5px;
+
+}
+}
+
+@media screen and (min-width: 960px) and (max-width: 1279px){
+	
+.img-service {
+	max-width: 200px;
+}
+.card-services {
+	min-width: 190px;
+	max-width: 220px;
+	height: 200.47px;
+}
+}
+
+
+@media screen and (min-width: 1280px) and (max-width: 1996px){
+	
+.img-service {
+	max-width: 100%;
+}
+.card-services {
+	width: 170px;
+	height: 250.47px;
+	margin-top: 5px;
+}
+
 }

@@ -1,0 +1,64 @@
+:host {
+	display: flex;
+	flex-direction:column;
+	height: 101%;
+}
+.contact-us{
+	
+}
+.contact-us-content {
+	margin-top: 200px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.button-contact {
+	height: 36px;
+	width: 12em;
+	margin-right: 4px;
+}
+
+.contact-us__title {
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 3vw;	
+    font-weight: bold;
+}
+
+
+.example-full-width {
+  width: 100%;
+}
+
+.whatsapp-cont__cont {
+	margin-top: 200px;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+.whatsapp-cont__title {
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 3vw;	
+    font-weight: bold;	
+}
+
+@media screen and (max-width: 599px) {
+.contact-us-content {
+	margin-top: 0px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.whatsapp-cont__cont {
+	margin-top: 0px;
+	margin-right: 5%;
+	margin-left: 5%;
+}	
+
+.whatsapp-cont__title {
+    font-size: 4vw;	
+}
+
+.contact-us__title {
+    font-size: 4vw;	
+}
+
+}

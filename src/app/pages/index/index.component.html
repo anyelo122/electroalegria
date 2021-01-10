@@ -15,16 +15,18 @@
       </mat-toolbar>
       <mat-nav-list>
           <a mat-list-item href="#">Inicio</a>
+          <a mat-list-item href="#acerca">Acerca de nosotros</a>
           <a mat-list-item href="#">Servicios</a>
-          <a mat-list-item href="#">Agendar Cita</a>
-          <a mat-list-item href="#">Sobre Nosotros</a>
           <a mat-list-item href="#">Contáctanos</a>
           <a mat-list-item class="sign-in" routerLink="/login">Iniciar Sesión</a>
       </mat-nav-list>
    </mat-sidenav>
    <mat-sidenav-content>
       <app-inicio></app-inicio>
+      <app-quienes-somos></app-quienes-somos>
       <app-services></app-services>
+      <app-contactanos></app-contactanos>
+      <app-footer></app-footer>
    </mat-sidenav-content>
 
 </mat-sidenav-container>
