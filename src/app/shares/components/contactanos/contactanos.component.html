@@ -44,10 +44,8 @@
 
             <mat-error *ngIf="!dataContact.controls['observaciones'].valid">{{getErrorMessageObservaciones()}}</mat-error>
               </mat-form-field>
-              <div fxFlex fxLayout="row">
-		           	<mat-progress-bar mode="indeterminate" class="progress-indeterminate-contact"></mat-progress-bar>
-		           	<button mat-raised-button [disabled]="dataContact.invalid" color="primary" type="submit" class="button-contact">Contactar</button>
-      			</div>
+		           	<mat-progress-bar *ngIf="loading" mode="indeterminate" class="progress-indeterminate-contact"></mat-progress-bar>
+		           	<button mat-raised-button [disabled]="dataContact.invalid" type="submit" class="button-contact">Contactar</button>
              </div>
           </form>
          </div>

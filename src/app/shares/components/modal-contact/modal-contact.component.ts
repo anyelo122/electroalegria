@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-contact',
   templateUrl: './modal-contact.component.html',
   styleUrls: ['./modal-contact.component.scss']
 })
-export class ModalContactComponent implements OnInit {
+export class ModalContactComponent  {
 
-  constructor() { }
+	nombre: string;
+  constructor(private dialogRef: MatDialogRef<ModalContactComponent>,
+        @Inject(MAT_DIALOG_DATA) data:any) { 
+        this.nombre = data.nombre;
+        }
 
-  ngOnInit(): void {
-  }
 
+close() {
+        this.dialogRef.close();
+    }
 }

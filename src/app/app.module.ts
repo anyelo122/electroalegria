@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './core/material.module';
@@ -16,7 +18,6 @@ import { ServicesComponent } from './shares/components/services/services.compone
 import { FooterComponent } from './shares/components/footer/footer.component';
 import { QuienesSomosComponent } from './shares/components/quienes-somos/quienes-somos.component';
 import { ContactanosComponent } from './shares/components/contactanos/contactanos.component';
-import { InformacionComponent } from './shares/components/informacion/informacion.component';
 import { UbicacionComponent } from './shares/components/ubicacion/ubicacion.component';
 import { ModalContactComponent } from './shares/components/modal-contact/modal-contact.component';
 
@@ -25,7 +26,13 @@ import { ModalContactComponent } from './shares/components/modal-contact/modal-c
     AppComponent,
     IndexComponent,
     OpenSidebarOnSwipeDirective, 
-    SetGetWidthSidebarPipe, InicioComponent, ServicesComponent, FooterComponent, QuienesSomosComponent, ContactanosComponent, InformacionComponent, UbicacionComponent, ModalContactComponent
+    SetGetWidthSidebarPipe, 
+    InicioComponent, 
+    ServicesComponent, 
+    FooterComponent, 
+    QuienesSomosComponent, 
+    ContactanosComponent,
+    ModalContactComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +40,10 @@ import { ModalContactComponent } from './shares/components/modal-contact/modal-c
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
+  entryComponents: [ModalContactComponent],
   providers: [SidebarSwipeService],
   bootstrap: [AppComponent]
 })

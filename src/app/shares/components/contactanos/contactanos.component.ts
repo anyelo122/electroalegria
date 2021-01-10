@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { ContactanosService } from '../../../services/contactanos.service';
+import { ModalContactComponent } from '../modal-contact/modal-contact.component'
 @Component({
   selector: 'app-contactanos',
   templateUrl: './contactanos.component.html',
@@ -8,15 +11,18 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 export class ContactanosComponent implements OnInit {
 	dataContact: FormGroup;
 	metodoc: any;
-  loading: boolean = true; 
-  constructor(us: FormBuilder) {
+  loading: boolean = false; 
+  constructor(us: FormBuilder, contactService: ContactanosService,private dialog: MatDialog) {
   this.dataContact = us.group({
       'correo': ['', Validators.compose([
             Validators.required, Validators.email])],
       'nombrecompleto': ['', Validators.required],
       'metodo': ['', Validators.required],
       'telefono': ['', Validators.compose([
-      Validators.required, Validators.pattern(/^[0-9]\d{8,9}$/)
+      Validators.required, 
+      Validators.pattern(/^[0-9]/), 
+      Validators.minLength(8),
+      Validators.maxLength(9)
       ])],
       'asunto': ['', Validators.required],
       'observaciones': ['', Validators.required]
@@ -59,6 +65,10 @@ export class ContactanosComponent implements OnInit {
       return 'Número de teléfono es requerido';
     } else if(this.dataContact.controls['telefono'].hasError('pattern')) {
       return 'Sólo se permiten números';
+    } else if(this.dataContact.controls['telefono'].hasError('minLength')) {
+      return 'Deben ser mínimo 8 dígitos';
+    } else if(this.dataContact.controls['telefono'].hasError('maxLength')){
+      return 'Deben ser máximo 9 dígitos';
     } else {
       return '';
     }
@@ -73,7 +83,33 @@ export class ContactanosComponent implements OnInit {
 
   onSubmit(form: any){
   console.log(form);
+  this.loading = true;
+  const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+        nombre: form.nombrecompleto
+     };
+    const dialogRef = this.dialog.open(ModalContactComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+        (data:any) => this.whenDataIsComing(data)
+    );
+
+
+  /* this.contactService.sendContact(form).statusubscribe((res: any) => {
+     console.log(res);
+      this.loading = false; 
+    }, (err) => {
+     console.log(err + " hey");
+    }); */
+
   }
   
+
+   whenDataIsComing(data: any){
+     console.log('hey  ');
+    }
 
 }
