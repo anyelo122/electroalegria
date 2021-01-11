@@ -8,12 +8,12 @@
        	  <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutGap="5px"> 
 		        <mat-form-field  class="form-nombre-completo example-full-width">
 		            <mat-label>Tu nombre</mat-label>
-		            <input matInput placeholder="Nombre" formControlName="nombrecompleto"  required>
+		            <input matInput placeholder="Nombre" formControlName="nombrecompleto" #nombre required>
             <mat-error *ngIf="!dataContact.controls['nombrecompleto'].valid">{{getErrorMessageNombre()}}</mat-error>
 		        </mat-form-field>
 		        <mat-form-field class="form-email example-full-width" >
 		            <mat-label>Tu correo electrónico</mat-label>
-		            <input matInput placeholder="cl@ejemplo.com" formControlName="correo" class="email-input" required>
+		            <input matInput placeholder="cl@ejemplo.com" formControlName="correo" #correo class="email-input" required>
 		        
             <mat-error *ngIf="!dataContact.controls['correo'].valid">{{getErrorMessageCorreo()}}</mat-error>
 		        </mat-form-field>
@@ -21,7 +21,7 @@
         <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutGap="5px">
 			<mat-form-field>
 			    <mat-label>Método de contacto</mat-label>
-			    <mat-select formControlName="metodo"  name="metodo">
+			    <mat-select formControlName="metodo" #metodo name="metodo">
 			      <mat-option *ngFor="let met of metodoc" [value]="met.id">
 			        {{met.name}} 
 			      </mat-option>
@@ -31,7 +31,7 @@
 		         <mat-form-field class="example-full-width">
 				    <mat-label>Tu número de Teléfono</mat-label>
 				    <span matPrefix>+56 &nbsp;</span>
-				    <input formControlName="telefono" type="tel" matInput placeholder="555-555-1234">
+				    <input formControlName="telefono" type="tel" #telefono matInput placeholder="555-555-1234">
 				    <mat-icon matSuffix>mode_edit</mat-icon>
             <mat-error *ngIf="!dataContact.controls['telefono'].valid">{{getErrorMessageTelefono()}}</mat-error>
 				  </mat-form-field>
@@ -40,7 +40,7 @@
                     <mat-label> Acerca de tu mensaje</mat-label>
                     <textarea matInput
                               placeholder="Acerca de tu mensaje"
-                             formControlName="observaciones" required></textarea>
+                             formControlName="observaciones" #observaciones required></textarea>
 
             <mat-error *ngIf="!dataContact.controls['observaciones'].valid">{{getErrorMessageObservaciones()}}</mat-error>
               </mat-form-field>
