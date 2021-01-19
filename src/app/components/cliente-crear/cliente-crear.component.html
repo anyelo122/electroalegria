@@ -4,24 +4,28 @@
 		    <mat-form-field class="example-full-width" >
 		      <mat-label>Rut</mat-label>
 		      <input matInput placeholder="rut" formControlName="rut" required>
-		      <mat-error *ngIf="!dataClient.controls['rut'].valid">{{getErrorMessageRut()}}</mat-error>
+		      <mat-error *ngIf="dataClient.controls['rut'].hasError('required')">Debes escribir el rut</mat-error>
 		    </mat-form-field>
 		    <mat-form-field class="example-full-width" >
 		      <mat-label>Correo electrónico</mat-label>
 		      <input matInput placeholder="cl@ejemplo.com" formControlName="email" required>
-		      <mat-error *ngIf="!dataClient.controls['email'].valid">{{getErrorMessageEmail()}}</mat-error>
+		      <mat-error *ngIf="dataClient.controls['email'].hasError('required')">Debes escribir un correo</mat-error>
+		      <mat-error *ngIf="dataClient.controls['email'].hasError('email')">No es un correo electrónico válido</mat-error>
 		    </mat-form-field>
 		    <mat-form-field class="example-full-width" >
 		      <mat-label>Nombre</mat-label>
 		      <input matInput placeholder="Nombre" formControlName="nombre" required>
-		      <mat-error *ngIf="!dataClient.controls['nombre'].valid">{{getErrorMessageNombre()}}</mat-error>
+		      <mat-error *ngIf="dataClient.controls['nombre'].hasError('required')">Debes escribir el nombre del cliente</mat-error>
 		    </mat-form-field>
 		       <mat-form-field class="example-full-width">
 			   <mat-label>Número de Teléfono</mat-label>
 				<span matPrefix>+56 &nbsp;</span>
 				 <input formControlName="telefono" type="tel" matInput placeholder="555-555-1234">
 				 <mat-icon matSuffix>mode_edit</mat-icon>
-            <mat-error *ngIf="!dataClient.controls['telefono'].valid">{{getErrorMessageTelefono()}}</mat-error>
+            <mat-error *ngIf="dataClient.controls['telefono'].hasError('required')">Número de teléfono es requerido</mat-error>
+		    <mat-error *ngIf="dataClient.controls['telefono'].hasError('pattern')">Sólo se permiten números</mat-error>
+		    <mat-error *ngIf="dataClient.controls['telefono'].hasError('minLength')">Deben ser al menos 8 dígitos</mat-error>
+		    <mat-error *ngIf="dataClient.controls['telefono'].hasError('maxLength')">Deben ser máximo 9 dígitos</mat-error>
 		   </mat-form-field>
 		   	<mat-form-field>
 			    <mat-label>Comuna</mat-label>
@@ -30,7 +34,7 @@
 			        {{comu.name}} 
 			      </mat-option>
 			    </mat-select>
-            <mat-error *ngIf="!dataClient.controls['comuna'].valid">{{getErrorMessageComuna()}}</mat-error>
+            <mat-error *ngIf="dataClient.controls['comuna'].hasError('required')">Debes seleccionar una comuna</mat-error>
         </mat-form-field>
 		   	<mat-form-field>
 			    <mat-label>Ciudad</mat-label>
@@ -39,7 +43,7 @@
 			        {{ciu.name}} 
 			      </mat-option>
 			    </mat-select>
-            <mat-error *ngIf="!dataClient.controls['ciudad'].valid">{{getErrorMessageCiudad()}}</mat-error>
+            <mat-error *ngIf="dataClient.controls['ciudad'].hasError('required')">Debes seleccionar una ciudad</mat-error>
         </mat-form-field>
  		<mat-form-field>
                     <mat-label> Dirección</mat-label>
@@ -47,7 +51,7 @@
                               placeholder="Dirección del cliente"
                              formControlName="direccion" required></textarea>
 
-            <mat-error *ngIf="!dataClient.controls['direccion'].valid">{{getErrorMessageDireccion()}}</mat-error>
+            <mat-error *ngIf="dataClient.controls['direccion'].hasError('required')">Debes escribir una dirección</mat-error>
               </mat-form-field>
 
               	<mat-progress-bar *ngIf="loading" mode="indeterminate" class="progress-indeterminate-contact"></mat-progress-bar>
