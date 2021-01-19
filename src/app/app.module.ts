@@ -20,6 +20,10 @@ import { QuienesSomosComponent } from './shares/components/quienes-somos/quienes
 import { ContactanosComponent } from './shares/components/contactanos/contactanos.component';
 import { UbicacionComponent } from './shares/components/ubicacion/ubicacion.component';
 import { ModalContactComponent } from './shares/components/modal-contact/modal-contact.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { ClienteCrearComponent } from './components/cliente-crear/cliente-crear.component';
+import { ClienteEditarComponent } from './components/cliente-editar/cliente-editar.component';
+import { ClienteListaComponent } from './components/cliente-lista/cliente-lista.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { ModalContactComponent } from './shares/components/modal-contact/modal-c
     FooterComponent, 
     QuienesSomosComponent, 
     ContactanosComponent,
-    ModalContactComponent
+    ModalContactComponent,
+    ClienteComponent,
+    ClienteCrearComponent,
+    ClienteEditarComponent,
+    ClienteListaComponent
   ],
   imports: [
     BrowserModule,

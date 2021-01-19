@@ -12,11 +12,6 @@ export class ContactanosComponent implements OnInit {
 	dataContact: FormGroup;
 	metodoc: any;
   loading: boolean = false; 
-  @ViewChild('nombre', {static: true}) nombre: ElementRef;
-  @ViewChild('correo', {static: true}) correo: ElementRef;
-  @ViewChild('telefono', {static: true}) telefono: ElementRef;
-  @ViewChild('metodo', {static: true}) metodo: ElementRef;
-  @ViewChild('observaciones', {static: true}) observaciones: ElementRef;
   constructor(us: FormBuilder, contactService: ContactanosService,private dialog: MatDialog) {
   this.dataContact = us.group({
       'correo': ['', Validators.compose([
@@ -114,18 +109,6 @@ export class ContactanosComponent implements OnInit {
 
    whenDataIsComing(data: any){
       console.log('llegó');
-     this.loading = false; 
-     this.nombre.nativeElement.value = '';
-     this.correo.nativeElement.value = '';
-
-     this.telefono.nativeElement.value = '';
-
-     this.metodo.nativeElement.value = '';
-
-     this.observaciones.nativeElement.value = '';
-     /* this.dataContact.controls['metodo'].setValue('');
-     this.dataContact.controls['telefono'].setValue('');
-     this.dataContact.controls['observaciones'].setValue(''); */
-    } 
+   } 
 
 }
